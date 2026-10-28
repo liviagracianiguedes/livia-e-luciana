@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de autenticação com Supabase Auth.">
+  <title>Área do Aluno | ETEC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="visual-panel" aria-label="Apresentação">
+      <div class="brand"><span class="brand-mark">E</span><span>ETEC <b>São Mateus</b></span></div>
+      <div class="visual-copy">
+        <span class="eyebrow">AMBIENTE DIGITAL</span>
+        <h1>Seu espaço.<br><span>Seu aprendizado.</span></h1>
+        <p>Entre para acessar sua área exclusiva de estudos.</p>
+      </div>
+      <div class="visual-footer"><span class="status-dot"></span> Acesso protegido por autenticação</div>
+      <div class="decor decor-one"></div><div class="decor decor-two"></div>
+    </section>
+
+    <section class="content-panel">
+      <div id="login-view" class="auth-card">
+        <div class="mobile-brand"><span class="brand-mark">E</span><span>ETEC <b>São Mateus</b></span></div>
+        <span class="eyebrow">BEM-VINDA(O) DE VOLTA</span>
+        <h2>Fazer login</h2>
+        <p class="muted intro">Informe suas credenciais para continuar.</p>
+
+        <form id="login-form">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="username" required>
+          <label for="password">Senha</label>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+            <button class="show-password" id="toggle-password" type="button" aria-label="Mostrar senha">Mostrar</button>
+          </div>
+          <p id="login-message" class="message" role="status" aria-live="polite"></p>
+          <button id="login-button" class="primary-button" type="submit"><span>Entrar na minha conta</span><span aria-hidden="true">→</span></button>
+        </form>
+        <p class="secure-note"><span aria-hidden="true">⌑</span> Sua sessão é protegida pelo Supabase Auth.</p>
+      </div>
+
+      <div id="private-view" class="private-card" hidden>
+        <div class="private-top"><span class="success-icon">✓</span><button id="logout-button" class="logout-button" type="button">Sair ↗</button></div>
+        <span class="eyebrow">ACESSO CONFIRMADO</span>
+        <h2>Área restrita</h2>
+        <p class="muted">Você entrou com uma conta autenticada.</p>
+        <div class="user-box"><span class="user-avatar" id="user-initial">U</span><div><span class="small-label">Conta conectada</span><strong id="user-email">usuário</strong></div></div>
+        <div class="welcome-box"><span class="welcome-icon">✦</span><div><strong>Bem-vindo(a)!</strong><p>Esta área só fica disponível enquanto sua sessão estiver autenticada.</p></div></div>
+        <p id="private-message" class="message" role="status" aria-live="polite"></p>
+      </div>
+      <footer class="page-footer">Projeto acadêmico · HTML, CSS, JavaScript e Supabase</footer>
+    </section>
+  </main>
+</body>
+</html>
